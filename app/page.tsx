@@ -1,5 +1,6 @@
 import { ButtonLink } from "@/components/button-link";
 import { FaqList } from "@/components/faq-list";
+import { MentorCard } from "@/components/mentor-card";
 import { Photo } from "@/components/photo";
 import { SiteHeader } from "@/components/site-header";
 import {
@@ -89,7 +90,7 @@ function Hero() {
 
 function Pivot() {
   return (
-    <section className="bg-cream pt-4 pb-10 md:pt-8 md:pb-24" aria-labelledby="pivot-title">
+    <section className="overflow-x-clip bg-cream pt-4 pb-10 md:pt-8 md:pb-24" aria-labelledby="pivot-title">
       <div className="wrap">
         <div className="max-w-[920px]">
           <p className="eyebrow text-teal">Life in Progress presents</p>
@@ -116,16 +117,10 @@ function Pivot() {
             </p>
           </div>
         </div>
-        <ul className="quote-row mt-10 flex flex-col items-start gap-3 sm:flex-row sm:justify-between sm:gap-6 sm:pb-2">
-          {quotes.map((quote) => (
-            <li key={quote}>
-              <p className="quote-tilt display inline-flex rounded-full border border-brown/30 px-4 py-1.5 text-[clamp(0.95rem,4.2vw,1.2rem)] whitespace-nowrap text-brown sm:px-5 sm:py-2.5 sm:text-[1.5rem]">
-                {quote}
-              </p>
-            </li>
-          ))}
-        </ul>
-        <div className="mt-10 max-w-[62ch]">
+      </div>
+      <QuoteMarquee />
+      <div className="wrap">
+        <div className="mt-2 max-w-[62ch] md:mt-4">
           <p className="copy text-ink/85">
             None of that is a character flaw. It’s just what happens when you try
             to build something new with no room built around it.
@@ -196,7 +191,7 @@ function Cohort() {
 function Founder() {
   return (
     <section id="founder" className="bg-olive py-10 text-cream md:py-20" aria-labelledby="founder-title">
-      <div className="mx-auto grid w-[min(1480px,calc(100%-40px))] items-start gap-8 md:w-[min(1480px,calc(100%-64px))] lg:grid-cols-[minmax(0,1.15fr)_minmax(36rem,0.9fr)] lg:gap-12">
+      <div className="mx-auto grid w-[min(1280px,calc(100%-40px))] items-start gap-8 md:w-[min(1280px,calc(100%-64px))] lg:grid-cols-[minmax(0,1.15fr)_minmax(36rem,0.9fr)] lg:gap-12">
         <div className="grid grid-cols-[0.62fr_1fr] gap-3 sm:gap-4">
           <div className="grid gap-3 sm:gap-4">
             <Photo
@@ -254,7 +249,7 @@ function Founder() {
         </div>
       </div>
 
-      <dl className="mx-auto mt-12 grid w-[min(1480px,calc(100%-40px))] grid-cols-1 border-t border-cream/20 md:mt-16 md:w-[min(1480px,calc(100%-64px))] md:grid-cols-3 md:gap-4 md:pt-8 md:text-center">
+      <dl className="mx-auto mt-12 grid w-[min(1280px,calc(100%-40px))] grid-cols-1 border-t border-cream/20 md:mt-16 md:w-[min(1280px,calc(100%-64px))] md:grid-cols-3 md:gap-4 md:pt-8 md:text-center">
         {stats.map((stat) => (
           <div key={stat.value} className="flex items-baseline justify-between gap-6 border-b border-cream/20 py-4 md:block md:border-b-0 md:py-0">
             <dt className="display text-[1.85rem] leading-none md:text-[clamp(2.5rem,4vw,3.75rem)]">{stat.value}</dt>
@@ -283,48 +278,34 @@ function Progress() {
       </div>
 
       <div className="grid grid-cols-1 gap-0 md:grid-cols-4">
-        <Mentor name={mentors[0].name} image={mentors[0].image} alt={mentors[0].alt} bar={mentors[0].bar} speed={0.28} />
-        <Mentor name={mentors[1].name} image={mentors[1].image} alt={mentors[1].alt} bar={mentors[1].bar} speed={0.46} />
-        <blockquote className="flex h-full min-h-40 flex-col bg-quote text-brown md:min-h-0">
-          <p className="display flex-1 px-5 py-6 text-[1.35rem] leading-[1.2] sm:px-8 md:py-8 md:text-[2.3rem] md:leading-[1.15]">
-            Still in the work, beside everyone else building.
-          </p>
-          <footer className="display grid min-h-12 place-items-center bg-[#b89255] px-4 text-[1.25rem] text-brown md:min-h-[4.5rem] md:text-[2.25rem]">
-            Shai Ymbong
-          </footer>
-        </blockquote>
-        <Mentor name={mentors[2].name} image={mentors[2].image} alt={mentors[2].alt} bar={mentors[2].bar} speed={0.22} />
+        {mentors.map((mentor) => (
+          <MentorCard key={mentor.name} {...mentor} />
+        ))}
       </div>
     </section>
   );
 }
 
-function Mentor({
-  name,
-  image,
-  alt,
-  bar,
-  speed,
-}: {
-  name: string;
-  image: string;
-  alt: string;
-  bar: string;
-  speed: number;
-}) {
+function QuoteMarquee() {
+  const reel = [...quotes, ...quotes];
   return (
-    <figure className="flex h-full flex-col">
-      <Photo
-        src={image}
-        alt={alt}
-        speed={speed}
-        sizes="(max-width: 768px) 100vw, 25vw"
-        className="aspect-[5/4] w-full md:aspect-[4/9]"
-      />
-      <figcaption className={`${bar} display grid min-h-12 place-items-center px-4 text-[1.25rem] text-cream md:min-h-[4.5rem] md:text-[2.25rem]`}>
-        {name}
-      </figcaption>
-    </figure>
+    <div className="quote-marquee" role="region" aria-label="What’s in the way">
+      <div className="quote-marquee-tilt">
+        <div className="quote-track">
+          {[0, 1].map((copy) => (
+            <ul key={copy} className="quote-set" aria-hidden={copy === 1}>
+              {reel.map((quote, index) => (
+                <li key={`${copy}-${index}`}>
+                  <p className="display inline-flex rounded-full border border-brown/30 bg-cream px-4 py-1.5 text-[clamp(0.95rem,2vw,1.5rem)] whitespace-nowrap text-brown sm:px-5 sm:py-2.5">
+                    {quote}
+                  </p>
+                </li>
+              ))}
+            </ul>
+          ))}
+        </div>
+      </div>
+    </div>
   );
 }
 
@@ -336,7 +317,7 @@ function Fit() {
         <h2 id="fit-title" className="display headline mt-3 text-brown">
           {"Know where "}<em>you stand</em>.
         </h2>
-        <div className="mt-10 grid items-start gap-4 md:grid-cols-2 md:gap-5">
+        <div className="mt-10 grid items-stretch gap-4 md:grid-cols-2 md:gap-5">
           <FitCard title="It’s for you if…" items={fitForYou} tone="bg-rust-card" />
           <FitCard title="It’s probably not for you if…" items={fitNotForYou} tone="bg-brown" />
         </div>
@@ -355,7 +336,7 @@ function FitCard({
   tone: string;
 }) {
   return (
-    <article className={`${tone} rounded-md px-5 py-6 text-cream md:px-8 md:py-9`}>
+    <article className={`${tone} flex h-full flex-col rounded-md px-5 py-6 text-cream md:px-8 md:py-9`}>
       <h3 className="font-sans text-[13px] font-medium tracking-[0.14em] uppercase md:text-[15px] md:tracking-[0.16em]">{title}</h3>
       <ul className="mt-4 md:mt-5">
         {items.map((item) => (
@@ -470,7 +451,7 @@ function Pricing() {
 function Faq() {
   return (
     <section id="faq" className="bg-cream py-10 md:py-24">
-      <div className="wrap">
+      <div className="wrap-faq">
         <p className="eyebrow text-teal">Some questions from you</p>
         <h2 className="display headline mt-3 text-brown">Questions, answered.</h2>
         <div className="mt-8">

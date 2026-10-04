@@ -9,6 +9,8 @@ export const quotes = [
   "“I’m scared of being seen.”",
   "“I don’t know where to start.”",
   "“I don’t have time.”",
+  "“I have too many ideas.”",
+  "“I keep starting and it doesn’t stick.”",
 ];
 
 export const stats = [
@@ -20,21 +22,45 @@ export const stats = [
 export const mentors = [
   {
     name: "Angely Dub",
+    backName: "Angely Dub",
     image: "/images/mentor-angely.jpg",
     alt: "Angely Dub in a wide straw hat, looking up and smiling",
-    bar: "bg-rust",
+    bar: "bg-rust text-cream",
+    back: "bg-rust text-cream",
+    speed: 0.28,
+    role: "Founder, Access Travel PH · Access Lite · Explora Ahora · Life in Progress · Happi Lab · Access Wellness Club · Ohana Pets",
+    bio: "Hey, I’m Angely. I’ve built seven businesses, more if you count my twenties. I know how to build a brand people actually love, and grow it to a community of over a million. This year I’m leading Access Travel’s Africa trips myself, personally, for the first time in years.",
   },
   {
     name: "Bea Trinidad",
+    backName: "Bea",
     image: "/images/mentor-bea.jpg",
     alt: "Bea Trinidad laughing in a white top at a wine bar",
-    bar: "bg-[#3e6154]",
+    bar: "bg-[#3e6154] text-cream",
+    back: "bg-[#3e6154] text-cream",
+    speed: 0.46,
+    role: "Messaging, writing & communications strategist",
+    bio: "Bea 4x’d her own income as a solopreneur doing exactly what she teaches. She’s shaped messaging and brand voice for founders across Manila and London, and built her entire network from nothing but outreach and content. If your message isn’t landing, she’ll tell you why.",
+  },
+  {
+    name: "Shai Ymbong",
+    backName: "Shai Ymbong",
+    quote: "Still in the work, beside everyone else building.",
+    bar: "bg-[#b89255] text-brown",
+    back: "bg-quote text-brown",
+    role: "Founder, ShyStudios · Storytelling & creative direction",
+    bio: "Shai built YouTube channels and brand identities for celebrities and creators, then turned the same playbook on herself and landed her own brand deals doing it. The resident expert on branding, visual storytelling, and creative direction.",
   },
   {
     name: "Nicole Santiago",
+    backName: "Nicole Santiago",
     image: "/images/mentor-nicole.jpg",
     alt: "Nicole Santiago in a white t-shirt, arms crossed, smiling",
-    bar: "bg-brown",
+    bar: "bg-brown text-cream",
+    back: "bg-brown text-cream",
+    speed: 0.22,
+    role: "Marketing & events consultant for local and international brands",
+    bio: "Nicole runs teams of 20+ people for brands most consultants only dream of landing. Right now she’s opening her own cafe, so she’s living the “start something new while still consulting” chapter in real time. She’ll teach you how to market yourself, your business, or whatever you’re building next.",
   },
 ];
 
