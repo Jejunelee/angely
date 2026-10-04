@@ -15,11 +15,11 @@ export function FaqList() {
             <h3>
               <button
                 type="button"
-                className="flex w-full items-center justify-between gap-6 py-5 text-left"
+                className="flex w-full items-center justify-between gap-4 py-4 text-left md:gap-6 md:py-5"
                 aria-expanded={expanded}
                 onClick={() => setOpen(expanded ? null : index)}
               >
-                <span className="subhead text-[1.35rem] text-brown md:text-[1.6rem]">
+                <span className="subhead text-[1.05rem] text-brown md:text-[1.6rem]">
                   {item.q}
                 </span>
                 <span
@@ -34,7 +34,7 @@ export function FaqList() {
               className={`grid transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${expanded ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
             >
               <div className="overflow-hidden">
-                <div className="max-w-2xl pb-6 pr-14 text-[18px] leading-[1.65] text-ink/80">{item.a}</div>
+                <div className="max-w-2xl pb-5 pr-12 text-[15px] leading-[1.55] text-ink/80 md:pb-6 md:pr-14 md:text-[18px] md:leading-[1.65]">{item.a}</div>
               </div>
             </div>
           </div>

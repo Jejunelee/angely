@@ -79,7 +79,7 @@ function Hero() {
             priority
             speed={0.62}
             sizes="(max-width: 768px) 100vw, 42vw"
-            className="aspect-[4/5] w-full"
+            className="aspect-[5/4] w-full md:aspect-[4/5]"
           />
         </div>
       </div>
@@ -89,7 +89,7 @@ function Hero() {
 
 function Pivot() {
   return (
-    <section className="bg-cream pt-6 pb-16 md:pt-8 md:pb-24" aria-labelledby="pivot-title">
+    <section className="bg-cream pt-4 pb-10 md:pt-8 md:pb-24" aria-labelledby="pivot-title">
       <div className="wrap">
         <div className="max-w-[920px]">
           <p className="eyebrow text-teal">Life in Progress presents</p>
@@ -101,7 +101,7 @@ function Pivot() {
             <br />
             in public for years.
           </h2>
-          <div className="copy mt-8 max-w-[46rem] space-y-5 text-ink/85">
+          <div className="copy mt-5 max-w-[46rem] space-y-3 text-ink/85 md:mt-8 md:space-y-5">
             <p>
               I stopped leading tours. I moved to Madrid with no real plan past
               “let’s see.” I’ve spent 15 years building Access Travel.
@@ -119,7 +119,7 @@ function Pivot() {
         <ul className="quote-row mt-10 flex flex-col items-start gap-3 sm:flex-row sm:justify-between sm:gap-6 sm:pb-2">
           {quotes.map((quote) => (
             <li key={quote}>
-              <p className="quote-tilt display inline-flex rounded-full border border-brown/30 px-5 py-2.5 text-[1.5rem] text-brown sm:whitespace-nowrap">
+              <p className="quote-tilt display inline-flex rounded-full border border-brown/30 px-4 py-1.5 text-[clamp(0.95rem,4.2vw,1.2rem)] whitespace-nowrap text-brown sm:px-5 sm:py-2.5 sm:text-[1.5rem]">
                 {quote}
               </p>
             </li>
@@ -130,7 +130,7 @@ function Pivot() {
             None of that is a character flaw. It’s just what happens when you try
             to build something new with no room built around it.
           </p>
-          <p className="display mt-8 text-[clamp(1.85rem,2.8vw,2.35rem)] text-brown">
+          <p className="display mt-6 text-[1.35rem] text-brown md:mt-8 md:text-[clamp(1.85rem,2.8vw,2.35rem)]">
             So we’re building that room
           </p>
           <p className="copy mt-3 text-ink/80">
@@ -144,7 +144,7 @@ function Pivot() {
 
 function Video() {
   return (
-    <section aria-label="Video" className="bg-cream pb-16 md:pb-24">
+    <section aria-label="Video" className="bg-cream pb-10 md:pb-24">
       <div className="wrap">
         <div className="aspect-video overflow-hidden rounded-xl bg-[#CBAD86]">
           <iframe
@@ -163,13 +163,13 @@ function Video() {
 
 function Cohort() {
   return (
-    <section id="cohort" className="bg-brown py-16 text-cream md:py-24">
+    <section id="cohort" className="bg-brown py-10 text-cream md:py-24">
       <div className="wrap flex flex-col items-center text-center">
         <p className="eyebrow text-cream">Introducing</p>
         <h2 className="display headline mt-4 text-gold">
           {"Dreamers "}<em>&amp; Doers</em>
         </h2>
-        <div className="copy mt-8 max-w-[40rem] space-y-5 text-cream/85">
+        <div className="copy mt-5 max-w-[40rem] space-y-3 text-cream/85 md:mt-8 md:space-y-5">
           <p>
             A live, 6-week cohort inside Life in Progress, built on the idea that
             we all love to dream.
@@ -195,7 +195,7 @@ function Cohort() {
 
 function Founder() {
   return (
-    <section id="founder" className="bg-olive py-14 text-cream md:py-20" aria-labelledby="founder-title">
+    <section id="founder" className="bg-olive py-10 text-cream md:py-20" aria-labelledby="founder-title">
       <div className="mx-auto grid w-[min(1480px,calc(100%-40px))] items-start gap-8 md:w-[min(1480px,calc(100%-64px))] lg:grid-cols-[minmax(0,1.15fr)_minmax(36rem,0.9fr)] lg:gap-12">
         <div className="grid grid-cols-[0.62fr_1fr] gap-3 sm:gap-4">
           <div className="grid gap-3 sm:gap-4">
@@ -233,7 +233,7 @@ function Founder() {
             <br />
             make ideas real.
           </h2>
-          <div className="copy mt-5 space-y-4 text-cream/85">
+          <div className="copy mt-4 space-y-3 text-cream/85 md:mt-5 md:space-y-4">
             <p>I’ve built seven businesses. Nobody handed me a playbook for any of them.</p>
             <p>
               I stepped away from leading tours myself when I moved to Madrid. I came back
@@ -254,11 +254,11 @@ function Founder() {
         </div>
       </div>
 
-      <dl className="mx-auto mt-12 grid w-[min(1480px,calc(100%-40px))] grid-cols-3 gap-4 border-t border-cream/20 pt-8 text-center md:mt-16 md:w-[min(1480px,calc(100%-64px))]">
+      <dl className="mx-auto mt-12 grid w-[min(1480px,calc(100%-40px))] grid-cols-1 border-t border-cream/20 md:mt-16 md:w-[min(1480px,calc(100%-64px))] md:grid-cols-3 md:gap-4 md:pt-8 md:text-center">
         {stats.map((stat) => (
-          <div key={stat.value}>
-            <dt className="display text-[clamp(2.5rem,4vw,3.75rem)]">{stat.value}</dt>
-            <dd className="mx-auto mt-2 max-w-[12ch] font-sans text-[14px] tracking-[0.14em] text-cream/75 uppercase">
+          <div key={stat.value} className="flex items-baseline justify-between gap-6 border-b border-cream/20 py-4 md:block md:border-b-0 md:py-0">
+            <dt className="display text-[1.85rem] leading-none md:text-[clamp(2.5rem,4vw,3.75rem)]">{stat.value}</dt>
+            <dd className="text-right font-sans text-[13px] tracking-[0.14em] text-cream/75 uppercase md:mx-auto md:mt-2 md:max-w-[12ch] md:text-center md:text-[14px]">
               {stat.label}
             </dd>
           </div>
@@ -271,7 +271,7 @@ function Founder() {
 function Progress() {
   return (
     <section id="progress" className="bg-charcoal text-cream" aria-labelledby="progress-title">
-      <div className="wrap py-14 text-center md:py-16">
+      <div className="wrap py-8 text-center md:py-16">
         <p className="eyebrow text-cream/60">People who have done it</p>
         <h2 id="progress-title" className="display headline mt-3">
           {"Progress, "}<em>faster</em>.
@@ -285,11 +285,11 @@ function Progress() {
       <div className="grid grid-cols-1 gap-0 md:grid-cols-4">
         <Mentor name={mentors[0].name} image={mentors[0].image} alt={mentors[0].alt} bar={mentors[0].bar} speed={0.28} />
         <Mentor name={mentors[1].name} image={mentors[1].image} alt={mentors[1].alt} bar={mentors[1].bar} speed={0.46} />
-        <blockquote className="flex h-full min-h-[280px] flex-col bg-quote text-brown md:min-h-0">
-          <p className="display flex-1 px-6 py-8 text-[2.05rem] leading-[1.15] sm:px-8 md:text-[2.3rem]">
+        <blockquote className="flex h-full min-h-40 flex-col bg-quote text-brown md:min-h-0">
+          <p className="display flex-1 px-5 py-6 text-[1.35rem] leading-[1.2] sm:px-8 md:py-8 md:text-[2.3rem] md:leading-[1.15]">
             Still in the work, beside everyone else building.
           </p>
-          <footer className="display grid min-h-[4.5rem] place-items-center bg-[#b89255] px-4 text-[2.05rem] text-brown md:text-[2.25rem]">
+          <footer className="display grid min-h-12 place-items-center bg-[#b89255] px-4 text-[1.25rem] text-brown md:min-h-[4.5rem] md:text-[2.25rem]">
             Shai Ymbong
           </footer>
         </blockquote>
@@ -319,9 +319,9 @@ function Mentor({
         alt={alt}
         speed={speed}
         sizes="(max-width: 768px) 100vw, 25vw"
-        className="aspect-[4/5] w-full md:aspect-[4/9]"
+        className="aspect-[5/4] w-full md:aspect-[4/9]"
       />
-      <figcaption className={`${bar} display grid min-h-[4.5rem] place-items-center px-4 text-[2.05rem] text-cream md:text-[2.25rem]`}>
+      <figcaption className={`${bar} display grid min-h-12 place-items-center px-4 text-[1.25rem] text-cream md:min-h-[4.5rem] md:text-[2.25rem]`}>
         {name}
       </figcaption>
     </figure>
@@ -330,7 +330,7 @@ function Mentor({
 
 function Fit() {
   return (
-    <section id="fit" className="bg-cream py-16 md:py-24" aria-labelledby="fit-title">
+    <section id="fit" className="bg-cream py-10 md:py-24" aria-labelledby="fit-title">
       <div className="wrap">
         <p className="eyebrow text-teal">Is this for you?</p>
         <h2 id="fit-title" className="display headline mt-3 text-brown">
@@ -355,11 +355,11 @@ function FitCard({
   tone: string;
 }) {
   return (
-    <article className={`${tone} rounded-md px-7 py-8 text-cream md:px-8 md:py-9`}>
-      <h3 className="font-sans text-[15px] font-medium tracking-[0.16em] uppercase">{title}</h3>
-      <ul className="mt-5">
+    <article className={`${tone} rounded-md px-5 py-6 text-cream md:px-8 md:py-9`}>
+      <h3 className="font-sans text-[13px] font-medium tracking-[0.14em] uppercase md:text-[15px] md:tracking-[0.16em]">{title}</h3>
+      <ul className="mt-4 md:mt-5">
         {items.map((item) => (
-          <li key={item} className="border-t border-cream/35 py-4 text-[18px] leading-[1.65] text-cream/95 first:border-t-0 first:pt-2">
+          <li key={item} className="border-t border-cream/35 py-3 text-[15px] leading-[1.55] text-cream/95 first:border-t-0 first:pt-2 md:py-4 md:text-[18px] md:leading-[1.65]">
             {item}
           </li>
         ))}
@@ -370,7 +370,7 @@ function FitCard({
 
 function Schedule() {
   return (
-    <section id="schedule" className="bg-tan py-16 text-brown md:py-20">
+    <section id="schedule" className="bg-tan py-10 text-brown md:py-20">
       <div className="wrap">
         <p className="eyebrow text-cream">How the six weeks work</p>
         <h2 className="display headline mt-3">
@@ -380,10 +380,10 @@ function Schedule() {
           {weeks.map((week) => (
             <li
               key={week.n}
-              className="grid gap-1 border-t border-brown/25 py-5 md:grid-cols-[3.5rem_minmax(14rem,26rem)_1fr] md:items-baseline md:gap-8"
+              className="grid gap-1 border-t border-brown/25 py-3 md:grid-cols-[3.5rem_minmax(14rem,26rem)_1fr] md:items-baseline md:gap-8 md:py-5"
             >
-              <span className="display text-xl">{week.n}</span>
-              <h3 className="subhead text-[1.625rem]">{week.title}</h3>
+              <span className="display text-lg md:text-xl">{week.n}</span>
+              <h3 className="subhead text-[1.05rem] md:text-[1.625rem]">{week.title}</h3>
               <p className="copy text-brown/85">{week.body}</p>
             </li>
           ))}
@@ -395,8 +395,8 @@ function Schedule() {
               key={item.kicker}
               className="bg-cream px-4 py-4 text-center text-brown"
             >
-              <p className="font-sans text-[16px] font-medium tracking-[0.14em] uppercase">{item.kicker}</p>
-              <p className="mt-1 font-sans text-[16px] text-brown/75">{item.line}</p>
+              <p className="font-sans text-[13px] font-medium tracking-[0.12em] uppercase md:text-[16px] md:tracking-[0.14em]">{item.kicker}</p>
+              <p className="mt-1 font-sans text-[13px] text-brown/75 md:text-[16px]">{item.line}</p>
             </li>
           ))}
         </ul>
@@ -407,7 +407,7 @@ function Schedule() {
 
 function Outcomes() {
   return (
-    <section className="bg-tan-deep py-16 text-cream md:py-20" aria-labelledby="outcomes-title">
+    <section className="bg-tan-deep py-10 text-cream md:py-20" aria-labelledby="outcomes-title">
       <div className="wrap">
         <p className="eyebrow text-center text-cream/75">What you’ll walk away with</p>
         <h2
@@ -418,17 +418,17 @@ function Outcomes() {
           <br />
           <em>Actual progress.</em>
         </h2>
-        <ul className="outcomes mt-12 grid gap-10 md:grid-cols-3 md:gap-0">
+        <ul className="outcomes mt-8 grid gap-6 md:mt-12 md:grid-cols-3 md:gap-0">
           {outcomes.map((item, index) => (
             <li
               key={item.n}
               className={`md:px-8 ${index > 0 ? "md:border-l md:border-cream/35" : ""} ${index === 0 ? "md:pl-0" : ""} ${index === outcomes.length - 1 ? "md:pr-0" : ""}`}
             >
               <p className="font-sans text-[15px] tracking-[0.16em] text-cream/80">{item.n}</p>
-              <h3 className="subhead mt-4 max-w-[16ch] text-[1.65rem] leading-tight">
+              <h3 className="subhead mt-3 max-w-[18ch] text-[1.15rem] leading-tight md:mt-4 md:max-w-[16ch] md:text-[1.65rem]">
                 {item.title}
               </h3>
-              <p className="mt-4 max-w-[32ch] text-[18px] leading-[1.65] text-cream/85">{item.body}</p>
+              <p className="mt-3 max-w-[36ch] text-[15px] leading-[1.55] text-cream/85 md:mt-4 md:max-w-[32ch] md:text-[18px] md:leading-[1.65]">{item.body}</p>
             </li>
           ))}
         </ul>
@@ -439,7 +439,7 @@ function Outcomes() {
 
 function Pricing() {
   return (
-    <section id="pricing" className="bg-cream py-16 md:py-24">
+    <section id="pricing" className="bg-cream py-10 md:py-24">
       <div className="wrap">
         <p className="eyebrow text-center text-teal">The investment</p>
         <h2 className="display headline mt-3 text-center text-brown">
@@ -447,10 +447,10 @@ function Pricing() {
         </h2>
         <div className="mx-auto mt-10 grid max-w-3xl gap-4 md:grid-cols-2">
           {plans.map((plan) => (
-            <article key={plan.name} className={`${plan.tone} px-7 py-9 text-center text-cream`}>
+            <article key={plan.name} className={`${plan.tone} px-5 py-7 text-center text-cream md:px-7 md:py-9`}>
               <p className="eyebrow text-cream/80">{plan.name}</p>
-              <p className="display mt-4 text-[clamp(3.4rem,6vw,4.4rem)]">{plan.price}</p>
-              <p className="mt-3 min-h-14 text-[18px] leading-7 text-cream/90">{plan.detail}</p>
+              <p className="display mt-3 text-[2.25rem] md:mt-4 md:text-[clamp(3.4rem,6vw,4.4rem)]">{plan.price}</p>
+              <p className="mt-2 text-[15px] leading-6 text-cream/90 md:mt-3 md:min-h-14 md:text-[18px] md:leading-7">{plan.detail}</p>
               <div className="mt-6">
                 <ButtonLink href={plan.href} variant="white" uppercase>
                   Save my spot
@@ -459,7 +459,7 @@ function Pricing() {
             </article>
           ))}
         </div>
-        <p className="mx-auto mt-8 text-center text-[18px] text-ink/70">
+        <p className="mx-auto mt-6 text-center text-[15px] text-ink/70 md:mt-8 md:text-[18px]">
           Bringing a friend? Ask us about our cohort rate.
         </p>
       </div>
@@ -469,7 +469,7 @@ function Pricing() {
 
 function Faq() {
   return (
-    <section id="faq" className="bg-cream py-16 md:py-24">
+    <section id="faq" className="bg-cream py-10 md:py-24">
       <div className="wrap">
         <p className="eyebrow text-teal">Some questions from you</p>
         <h2 className="display headline mt-3 text-brown">Questions, answered.</h2>
@@ -483,7 +483,7 @@ function Faq() {
 
 function Close() {
   return (
-    <section id="join" className="bg-brown py-20 text-cream md:py-28">
+    <section id="join" className="bg-brown py-12 text-cream md:py-28">
       <div className="wrap flex flex-col items-center text-center">
         <p className="eyebrow text-gold">Life in Progress</p>
         <h2 className="display headline mt-4">
@@ -491,7 +491,7 @@ function Close() {
           <br />
           this account for years.
         </h2>
-        <div className="copy mt-6 max-w-[46ch] space-y-4 text-[18px] leading-[1.65] text-cream/80">
+        <div className="copy mt-5 max-w-[46ch] space-y-3 text-cream/80 md:mt-6 md:space-y-4">
           <p>Some of you have been in the DMs asking me how I’ve built my businesses and life.</p>
           <p>Well, here it is.</p>
           <p>You need six weeks, a community of other women, and momentum.</p>
