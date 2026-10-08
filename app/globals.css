@@ -1,33 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --cream: #faf3ed;
-  --cream-deep: #f1e6e0;
+  --cream: #f0e7e0;
+  --cream-deep: #f0e7e0;
+  --white: #ffffff;
   --ink: #373535;
   --brown: #5d3722;
-  --rust: #a0502d;
-  --rust-card: #b14d2c;
-  --tan: #c39864;
-  --tan-deep: #a67459;
-  --olive: #737661;
-  --charcoal: #282725;
-  --sage: #747762;
-  --teal: #3d6d60;
-  --quote: #c4a36b;
-  --video: #e6d0c1;
-  --gold: #c9ac8a;
+  --rust: #9f4919;
+  --rust-card: #9f4919;
+  --tan: #cbad86;
+  --tan-deep: #dbb71d;
+  --ochre: #bd7e32;
+  --olive: #9f4919;
+  --charcoal: #373535;
+  --sage: #9f4919;
+  --teal: #9f4919;
+  --quote: #cbad86;
+  --video: #cbad86;
+  --gold: #dbb71d;
   --line: rgba(93, 55, 34, 0.18);
 }
 
 @theme inline {
   --color-cream: var(--cream);
   --color-cream-deep: var(--cream-deep);
+  --color-white: var(--white);
   --color-ink: var(--ink);
   --color-brown: var(--brown);
   --color-rust: var(--rust);
   --color-rust-card: var(--rust-card);
   --color-tan: var(--tan);
   --color-tan-deep: var(--tan-deep);
+  --color-ochre: var(--ochre);
   --color-olive: var(--olive);
   --color-charcoal: var(--charcoal);
   --color-sage: var(--sage);
@@ -57,7 +61,7 @@ body {
 }
 
 ::selection {
-  background: #e7d3b0;
+  background: var(--tan);
   color: var(--brown);
 }
 
@@ -295,7 +299,7 @@ body {
   height: 3px;
   transform: scaleX(0);
   transform-origin: left center;
-  background: linear-gradient(90deg, #5d3722, #c9ac8a);
+  background: linear-gradient(90deg, #5d3722, #dbb71d);
   pointer-events: none;
 }
 

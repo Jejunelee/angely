@@ -36,8 +36,8 @@ export const mentors = [
     backName: "Bea",
     image: "/images/mentor-bea.jpg",
     alt: "Bea Trinidad laughing in a white top at a wine bar",
-    bar: "bg-[#3e6154] text-cream",
-    back: "bg-[#3e6154] text-cream",
+    bar: "bg-charcoal text-cream",
+    back: "bg-charcoal text-cream",
     speed: 0.46,
     role: "Messaging, writing & communications strategist",
     bio: "Bea 4x’d her own income as a solopreneur doing exactly what she teaches. She’s shaped messaging and brand voice for founders across Manila and London, and built her entire network from nothing but outreach and content. If your message isn’t landing, she’ll tell you why.",
@@ -46,7 +46,7 @@ export const mentors = [
     name: "Shai Ymbong",
     backName: "Shai Ymbong",
     quote: "Still in the work, beside everyone else building.",
-    bar: "bg-[#b89255] text-brown",
+    bar: "bg-brown text-cream",
     back: "bg-quote text-brown",
     role: "Founder, ShyStudios · Storytelling & creative direction",
     bio: "Shai built YouTube channels and brand identities for celebrities and creators, then turned the same playbook on herself and landed her own brand deals doing it. The resident expert on branding, visual storytelling, and creative direction.",
@@ -144,10 +144,10 @@ export const plans = [
   },
   {
     name: "Payment plan",
-    price: "₱25,000",
-    detail: "3 months to pay via BDO cards + 4%.",
-    tone: "bg-teal",
-    href: "https://www.angelydub.com/dreamers-and-doers/p/dreamers-and-doers-3-month-payment-plan",
+    price: "₱28,750",
+    detail: "3 monthly installments. ₱25,000 + 15% processing fees.",
+    tone: "bg-charcoal",
+    href: "https://angelvoyage.gumroad.com/l/dreamers-and-doers-payment-plan?wanted=true&pay_in_installments=true",
   },
 ];
 
@@ -174,6 +174,6 @@ export const faqs = [
   },
   {
     q: "What if it’s too expensive?",
-    a: "Pay in full is ₱20,000. The payment plan is ₱25,000 over 3 months via BDO cards, plus 4%. Bringing a friend? Ask about the cohort rate.",
+    a: "Pay in full is ₱20,000. The payment plan is ₱28,750 (₱25,000 + 15% processing fees), split into 3 monthly installments. Bringing a friend? Ask about the cohort rate.",
   },
 ];

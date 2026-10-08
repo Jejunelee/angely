@@ -141,7 +141,7 @@ function Video() {
   return (
     <section aria-label="Video" className="bg-cream pb-10 md:pb-24">
       <div className="wrap">
-        <div className="aspect-video overflow-hidden rounded-xl bg-[#CBAD86]">
+        <div className="aspect-video overflow-hidden rounded-xl bg-tan">
           <iframe
             className="h-full w-full"
             src="https://www.youtube-nocookie.com/embed/r2OIYW-BNT4"
@@ -179,7 +179,7 @@ function Cohort() {
           </p>
         </div>
         <div className="mt-10">
-          <ButtonLink href="#schedule" variant="gold">
+          <ButtonLink href="#schedule" variant="white">
             Get The Details
           </ButtonLink>
         </div>
@@ -190,7 +190,7 @@ function Cohort() {
 
 function Founder() {
   return (
-    <section id="founder" className="bg-olive py-10 text-cream md:py-20" aria-labelledby="founder-title">
+    <section id="founder" className="bg-tan py-10 text-brown md:py-20" aria-labelledby="founder-title">
       <div className="mx-auto grid w-[min(1280px,calc(100%-40px))] items-start gap-8 md:w-[min(1280px,calc(100%-64px))] lg:grid-cols-[minmax(0,1.15fr)_minmax(36rem,0.9fr)] lg:gap-12">
         <div className="grid grid-cols-[0.62fr_1fr] gap-3 sm:gap-4">
           <div className="grid gap-3 sm:gap-4">
@@ -228,7 +228,7 @@ function Founder() {
             <br />
             make ideas real.
           </h2>
-          <div className="copy mt-4 space-y-3 text-cream/85 md:mt-5 md:space-y-4">
+          <div className="copy mt-4 space-y-3 text-charcoal md:mt-5 md:space-y-4">
             <p>I’ve built seven businesses. Nobody handed me a playbook for any of them.</p>
             <p>
               I stepped away from leading tours myself when I moved to Madrid. I came back
@@ -249,11 +249,11 @@ function Founder() {
         </div>
       </div>
 
-      <dl className="mx-auto mt-12 grid w-[min(1280px,calc(100%-40px))] grid-cols-1 border-t border-cream/20 md:mt-16 md:w-[min(1280px,calc(100%-64px))] md:grid-cols-3 md:gap-4 md:pt-8 md:text-center">
+      <dl className="mx-auto mt-12 grid w-[min(1280px,calc(100%-40px))] grid-cols-1 border-t border-brown/20 md:mt-16 md:w-[min(1280px,calc(100%-64px))] md:grid-cols-3 md:gap-4 md:pt-8 md:text-center">
         {stats.map((stat) => (
-          <div key={stat.value} className="flex items-baseline justify-between gap-6 border-b border-cream/20 py-4 md:block md:border-b-0 md:py-0">
+          <div key={stat.value} className="flex items-baseline justify-between gap-6 border-b border-brown/20 py-4 md:block md:border-b-0 md:py-0">
             <dt className="display text-[1.85rem] leading-none md:text-[clamp(2.5rem,4vw,3.75rem)]">{stat.value}</dt>
-            <dd className="text-right font-sans text-[13px] tracking-[0.14em] text-cream/75 uppercase md:mx-auto md:mt-2 md:max-w-[12ch] md:text-center md:text-[14px]">
+            <dd className="text-right font-sans text-[13px] tracking-[0.14em] text-charcoal uppercase md:mx-auto md:mt-2 md:max-w-[12ch] md:text-center md:text-[14px]">
               {stat.label}
             </dd>
           </div>
@@ -296,7 +296,7 @@ function QuoteMarquee() {
             <ul key={copy} className="quote-set" aria-hidden={copy === 1}>
               {reel.map((quote, index) => (
                 <li key={`${copy}-${index}`}>
-                  <p className="display inline-flex rounded-full border border-brown/30 bg-cream px-4 py-1.5 text-[clamp(0.95rem,2vw,1.5rem)] whitespace-nowrap text-brown sm:px-5 sm:py-2.5">
+                  <p className="display inline-flex rounded-full border border-ochre bg-white px-4 py-1.5 text-[clamp(0.95rem,2vw,1.5rem)] whitespace-nowrap text-brown sm:px-5 sm:py-2.5">
                     {quote}
                   </p>
                 </li>
@@ -318,8 +318,8 @@ function Fit() {
           {"Know where "}<em>you stand</em>.
         </h2>
         <div className="mt-10 grid items-stretch gap-4 md:grid-cols-2 md:gap-5">
-          <FitCard title="It’s for you if…" items={fitForYou} tone="bg-rust-card" />
-          <FitCard title="It’s probably not for you if…" items={fitNotForYou} tone="bg-brown" />
+          <FitCard title="It’s for you if…" items={fitForYou} tone="bg-tan text-brown" />
+          <FitCard title="It’s probably not for you if…" items={fitNotForYou} tone="bg-brown text-cream" />
         </div>
       </div>
     </section>
@@ -336,11 +336,11 @@ function FitCard({
   tone: string;
 }) {
   return (
-    <article className={`${tone} flex h-full flex-col rounded-md px-5 py-6 text-cream md:px-8 md:py-9`}>
+    <article className={`${tone} flex h-full flex-col rounded-md px-5 py-6 md:px-8 md:py-9`}>
       <h3 className="font-sans text-[13px] font-medium tracking-[0.14em] uppercase md:text-[15px] md:tracking-[0.16em]">{title}</h3>
       <ul className="mt-4 md:mt-5">
         {items.map((item) => (
-          <li key={item} className="border-t border-cream/35 py-3 text-[15px] leading-[1.55] text-cream/95 first:border-t-0 first:pt-2 md:py-4 md:text-[18px] md:leading-[1.65]">
+          <li key={item} className="border-t border-current/25 py-3 text-[15px] leading-[1.55] first:border-t-0 first:pt-2 md:py-4 md:text-[18px] md:leading-[1.65]">
             {item}
           </li>
         ))}
@@ -353,7 +353,7 @@ function Schedule() {
   return (
     <section id="schedule" className="bg-tan py-10 text-brown md:py-20">
       <div className="wrap">
-        <p className="eyebrow text-cream">How the six weeks work</p>
+        <p className="eyebrow text-brown">How the six weeks work</p>
         <h2 className="display headline mt-3">
           {"The "}<em>six-week</em>{" schedule"}
         </h2>
@@ -365,7 +365,7 @@ function Schedule() {
             >
               <span className="display text-lg md:text-xl">{week.n}</span>
               <h3 className="subhead text-[1.05rem] md:text-[1.625rem]">{week.title}</h3>
-              <p className="copy text-brown/85">{week.body}</p>
+              <p className="copy text-charcoal">{week.body}</p>
             </li>
           ))}
         </ol>
@@ -374,10 +374,10 @@ function Schedule() {
           {rhythm.map((item) => (
             <li
               key={item.kicker}
-              className="bg-cream px-4 py-4 text-center text-brown"
+              className="border-t-4 border-ochre bg-white px-4 py-4 text-center text-brown"
             >
               <p className="font-sans text-[13px] font-medium tracking-[0.12em] uppercase md:text-[16px] md:tracking-[0.14em]">{item.kicker}</p>
-              <p className="mt-1 font-sans text-[13px] text-brown/75 md:text-[16px]">{item.line}</p>
+              <p className="mt-1 font-sans text-[13px] text-charcoal md:text-[16px]">{item.line}</p>
             </li>
           ))}
         </ul>
@@ -388,7 +388,7 @@ function Schedule() {
 
 function Outcomes() {
   return (
-    <section className="bg-tan-deep py-10 text-cream md:py-20" aria-labelledby="outcomes-title">
+    <section className="bg-brown py-10 text-cream md:py-20" aria-labelledby="outcomes-title">
       <div className="wrap">
         <p className="eyebrow text-center text-cream/75">What you’ll walk away with</p>
         <h2
@@ -397,15 +397,15 @@ function Outcomes() {
         >
           Not another course.
           <br />
-          <em>Actual progress.</em>
+          <em className="text-gold">Actual progress.</em>
         </h2>
         <ul className="outcomes mt-8 grid gap-6 md:mt-12 md:grid-cols-3 md:gap-0">
           {outcomes.map((item, index) => (
             <li
               key={item.n}
-              className={`md:px-8 ${index > 0 ? "md:border-l md:border-cream/35" : ""} ${index === 0 ? "md:pl-0" : ""} ${index === outcomes.length - 1 ? "md:pr-0" : ""}`}
+              className={`md:px-8 ${index > 0 ? "md:border-l md:border-cream/30" : ""} ${index === 0 ? "md:pl-0" : ""} ${index === outcomes.length - 1 ? "md:pr-0" : ""}`}
             >
-              <p className="font-sans text-[15px] tracking-[0.16em] text-cream/80">{item.n}</p>
+              <p className="font-sans text-[15px] tracking-[0.16em] text-gold">{item.n}</p>
               <h3 className="subhead mt-3 max-w-[18ch] text-[1.15rem] leading-tight md:mt-4 md:max-w-[16ch] md:text-[1.65rem]">
                 {item.title}
               </h3>
@@ -428,10 +428,10 @@ function Pricing() {
         </h2>
         <div className="mx-auto mt-10 grid max-w-3xl gap-4 md:grid-cols-2">
           {plans.map((plan) => (
-            <article key={plan.name} className={`${plan.tone} px-5 py-7 text-center text-cream md:px-7 md:py-9`}>
-              <p className="eyebrow text-cream/80">{plan.name}</p>
+            <article key={plan.name} className={`${plan.tone} px-5 py-7 text-center text-white md:px-7 md:py-9`}>
+              <p className="eyebrow text-white">{plan.name}</p>
               <p className="display mt-3 text-[2.25rem] md:mt-4 md:text-[clamp(3.4rem,6vw,4.4rem)]">{plan.price}</p>
-              <p className="mt-2 text-[15px] leading-6 text-cream/90 md:mt-3 md:min-h-14 md:text-[18px] md:leading-7">{plan.detail}</p>
+              <p className="mt-2 text-[15px] leading-6 text-white md:mt-3 md:min-h-14 md:text-[18px] md:leading-7">{plan.detail}</p>
               <div className="mt-6">
                 <ButtonLink href={plan.href} variant="white" uppercase>
                   Save my spot
@@ -466,7 +466,7 @@ function Close() {
   return (
     <section id="join" className="bg-brown py-12 text-cream md:py-28">
       <div className="wrap flex flex-col items-center text-center">
-        <p className="eyebrow text-gold">Life in Progress</p>
+        <p className="eyebrow text-cream/75">Life in Progress</p>
         <h2 className="display headline mt-4">
           You’ve been watching
           <br />

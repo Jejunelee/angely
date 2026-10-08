@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import Script from "next/script";
 import { Motion } from "@/components/motion";
 import { Preloader } from "@/components/preloader";
 import "./globals.css";
@@ -62,6 +63,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <Preloader />
         <Motion />
         {children}
+        {/* Gumroad checkout: handles the Payment plan CTA. Loaded once for every route. */}
+        <Script src="https://gumroad.com/js/gumroad.js" strategy="afterInteractive" />
       </body>
     </html>
   );

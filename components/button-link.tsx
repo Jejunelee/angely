@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 const variants = {
-  brown: "bg-brown text-cream hover:bg-[#4a2b1c]",
-  gold: "bg-gold text-brown hover:bg-[#d8c1a4]",
-  white: "bg-cream text-brown hover:bg-white",
+  brown: "bg-brown text-cream hover:bg-charcoal",
+  gold: "bg-gold text-brown hover:bg-tan",
+  white: "bg-white text-brown hover:bg-cream",
   text: "bg-transparent text-brown px-0 hover:opacity-70",
 } as const;
 
