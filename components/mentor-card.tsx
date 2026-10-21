@@ -8,6 +8,7 @@ export function MentorCard({
   backName,
   image,
   alt,
+  imageClassName,
   quote,
   bar,
   back,
@@ -19,6 +20,7 @@ export function MentorCard({
   backName: string;
   image?: string;
   alt?: string;
+  imageClassName?: string;
   quote?: string;
   bar: string;
   back: string;
@@ -47,6 +49,7 @@ export function MentorCard({
                 alt={alt ?? ""}
                 speed={speed}
                 sizes="(max-width: 768px) 100vw, 25vw"
+                imageClassName={imageClassName}
                 className="aspect-[5/4] w-full md:aspect-[1/2] md:flex-1"
               />
             ) : (

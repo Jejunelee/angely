@@ -4,6 +4,7 @@ export function Photo({
   src,
   alt,
   className = "",
+  imageClassName = "",
   priority = false,
   sizes,
   speed,
@@ -11,6 +12,7 @@ export function Photo({
   src: string;
   alt: string;
   className?: string;
+  imageClassName?: string;
   priority?: boolean;
   sizes: string;
   speed?: number;
@@ -26,7 +28,7 @@ export function Photo({
         fill
         priority={priority}
         sizes={sizes}
-        className="object-cover"
+        className={`object-cover ${imageClassName}`}
       />
     </div>
   );

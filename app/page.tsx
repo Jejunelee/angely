@@ -10,9 +10,10 @@ import {
   outcomes,
   plans,
   quotes,
-  rhythm,
+  curriculum,
   stats,
-  weeks,
+  weekIndex,
+  weekRhythm,
 } from "@/lib/content";
 
 export default function Home() {
@@ -34,6 +35,8 @@ export default function Home() {
         <Progress />
         <Fit />
         <Schedule />
+        <WeekRhythm />
+        <WeekLineup />
         <Outcomes />
         <Pricing />
         <Faq />
@@ -69,14 +72,15 @@ function Hero() {
           <div className="hero-fade mt-8 flex flex-wrap items-center gap-x-6 gap-y-4" style={{ animationDelay: "0.64s" }}>
             <ButtonLink href="#pricing">Join Dreamers &amp; Doers</ButtonLink>
             <p className="font-sans text-[15px] tracking-[0.16em] text-brown/80 uppercase">
-              Next cohort · [TBC]
+              Starts January 2027.
             </p>
           </div>
         </div>
         <div className="hero-frame">
           <Photo
             src="/images/hero.jpg"
-            alt="A woman with a full afro in a blush off-shoulder top, smiling"
+            alt="Angely Dub in a brown suit, looking to the side"
+            imageClassName="object-[center_20%]"
             priority
             speed={0.62}
             sizes="(max-width: 768px) 100vw, 42vw"
@@ -196,14 +200,16 @@ function Founder() {
           <div className="grid gap-3 sm:gap-4">
             <Photo
               src="/images/founder-flowers.jpg"
-              alt="Angely with pink flowers in her hair, looking toward the camera"
+              alt="Angely Dub in profile, wearing a brown suit and silver tie"
+              imageClassName="object-[30%_18%]"
               speed={0.22}
               sizes="(max-width: 1024px) 36vw, 22vw"
               className="aspect-[4/3]"
             />
             <Photo
               src="/images/founder-portrait.jpg"
-              alt="Angely in a rust turtleneck and plaid blazer"
+              alt="Angely Dub seated on a stool in a brown suit"
+              imageClassName="object-[center_15%]"
               speed={0.4}
               sizes="(max-width: 1024px) 36vw, 22vw"
               className="aspect-[2/3]"
@@ -211,7 +217,8 @@ function Founder() {
           </div>
           <Photo
             src="/images/founder-city.jpg"
-            alt="Angely in an olive sweater with a black bag, standing in a city plaza"
+            alt="Angely Dub in a brown suit, one hand in her pocket"
+            imageClassName="object-[center_20%]"
             speed={0.16}
             sizes="(max-width: 1024px) 56vw, 34vw"
             className="h-full min-h-[300px]"
@@ -351,36 +358,90 @@ function FitCard({
 
 function Schedule() {
   return (
-    <section id="schedule" className="bg-tan py-10 text-brown md:py-20">
+    <section id="schedule" className="bg-tan pt-10 pb-6 text-brown md:pt-20 md:pb-10">
       <div className="wrap">
-        <p className="eyebrow text-brown">How the six weeks work</p>
+        <p className="eyebrow text-brown">The curriculum</p>
         <h2 className="display headline mt-3">
-          {"The "}<em>six-week</em>{" schedule"}
+          In six weeks, you will have four mentors that will motivate you to <em>take action</em>.
         </h2>
+        <p className="copy mt-5 max-w-[46rem] text-charcoal">
+          Each week has one mentor, one live workshop, and one assignment. You don’t just learn it. You do it, that week, with everyone else.
+        </p>
+
         <ol className="mt-10 border-b border-brown/25">
-          {weeks.map((week) => (
+          {curriculum.map((week) => (
             <li
               key={week.n}
-              className="grid gap-1 border-t border-brown/25 py-3 md:grid-cols-[3.5rem_minmax(14rem,26rem)_1fr] md:items-baseline md:gap-8 md:py-5"
+              className="grid gap-2 border-t border-brown/25 py-4 md:grid-cols-[7rem_minmax(16rem,28rem)_1fr] md:items-baseline md:gap-x-8 md:gap-y-0 md:py-5"
             >
-              <span className="display text-lg md:text-xl">{week.n}</span>
-              <h3 className="subhead text-[1.05rem] md:text-[1.625rem]">{week.title}</h3>
-              <p className="copy text-charcoal">{week.body}</p>
+              <span className="display text-lg leading-none md:text-xl">{week.n}</span>
+              <div>
+                <h3 className="subhead text-balance text-[1.05rem] md:text-[1.625rem]">{week.title}</h3>
+                <p className="mt-2 font-sans text-[11px] leading-snug font-medium tracking-[0.14em] uppercase md:text-[12px]">{week.led}</p>
+              </div>
+              <div>
+                <p className="copy text-pretty text-charcoal">{week.body}</p>
+                <p className="mt-3 font-sans text-[11px] leading-none font-medium tracking-[0.14em] uppercase md:text-[12px]">Assignment</p>
+                <p className="copy mt-1.5 text-pretty text-charcoal">{week.assignment}</p>
+              </div>
             </li>
           ))}
         </ol>
+      </div>
+    </section>
+  );
+}
 
-        <ul className="chips mt-8 grid gap-3 sm:grid-cols-3">
-          {rhythm.map((item) => (
+function WeekRhythm() {
+  return (
+    <section id="rhythm" className="border-t border-brown/25 bg-tan py-8 text-brown md:py-14">
+      <div className="wrap">
+        <p className="eyebrow text-brown">How each week works</p>
+        <h2 className="display headline mt-3">
+          How the <em>six weeks</em> work
+        </h2>
+        <ol className="mt-8 border-b border-brown/25">
+          {weekRhythm.map((item) => (
             <li
-              key={item.kicker}
-              className="border-t-4 border-ochre bg-white px-4 py-4 text-center text-brown"
+              key={item.label}
+              className="grid gap-2 border-t border-brown/25 py-4 md:grid-cols-[27.5rem_1fr] md:items-baseline md:gap-x-10 md:gap-y-0 md:py-5"
             >
-              <p className="font-sans text-[13px] font-medium tracking-[0.12em] uppercase md:text-[16px] md:tracking-[0.14em]">{item.kicker}</p>
-              <p className="mt-1 font-sans text-[13px] text-charcoal md:text-[16px]">{item.line}</p>
+              <h3 className="subhead text-[1.05rem] md:text-[1.25rem]">{item.label}</h3>
+              <p className="copy text-pretty text-charcoal">{item.body}</p>
             </li>
           ))}
-        </ul>
+          <li className="grid gap-2 border-t border-brown/25 py-4 md:grid-cols-[27.5rem_1fr] md:items-baseline md:gap-x-10 md:gap-y-0 md:py-5">
+            <h3 className="subhead text-[1.05rem] md:text-[1.25rem]">Time commitment</h3>
+            <p className="copy text-charcoal">3 to 4 hours a week. Every live session is recorded.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+  );
+}
+
+function WeekLineup() {
+  const pairs = [0, 1, 2, 3].map((index) => [weekIndex[index], weekIndex[index + 4] ?? ""]);
+
+  return (
+    <section aria-label="The six weeks" className="border-t border-brown/25 bg-tan pt-8 pb-10 text-brown md:pt-14 md:pb-20">
+      <div className="wrap">
+        <p className="eyebrow text-brown">The six weeks</p>
+        <ol className="mt-6 border-b border-brown/25 md:hidden">
+          {weekIndex.map((item) => (
+            <li key={item} className="border-t border-brown/25 py-3 font-sans text-[14px] tracking-[0.04em] uppercase">
+              {item}
+            </li>
+          ))}
+        </ol>
+        <ol className="mt-6 hidden border-b border-brown/25 md:block">
+          {pairs.map(([left, right]) => (
+            <li key={left} className="grid grid-cols-2 gap-x-16 border-t border-brown/25 py-3.5 font-sans text-[15px] tracking-[0.04em] uppercase">
+              <span>{left}</span>
+              <span>{right}</span>
+            </li>
+          ))}
+        </ol>
       </div>
     </section>
   );
@@ -413,6 +474,9 @@ function Outcomes() {
             </li>
           ))}
         </ul>
+        <p className="mx-auto mt-8 max-w-[42ch] text-center text-[15px] leading-[1.55] text-cream/85 md:mt-12 md:text-[18px] md:leading-[1.65]">
+          It starts with the goal-setting kickoff workshop, led by Bea, before week one.
+        </p>
       </div>
     </section>
   );
@@ -441,6 +505,9 @@ function Pricing() {
           ))}
         </div>
         <p className="mx-auto mt-6 text-center text-[15px] text-ink/70 md:mt-8 md:text-[18px]">
+          Includes the goal-setting kickoff workshop, before the six weeks start.
+        </p>
+        <p className="mx-auto mt-2 text-center text-[15px] text-ink/70 md:text-[18px]">
           Bringing a friend? Ask us about our cohort rate.
         </p>
       </div>

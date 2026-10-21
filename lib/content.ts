@@ -14,9 +14,9 @@ export const quotes = [
 ];
 
 export const stats = [
-  { value: "7", label: "Years" },
+  { value: "15", label: "Years" },
   { value: "1M+", label: "Community" },
-  { value: "15", label: "Projects & businesses" },
+  { value: "7", label: "Businesses" },
 ];
 
 export const mentors = [
@@ -24,7 +24,8 @@ export const mentors = [
     name: "Angely Dub",
     backName: "Angely Dub",
     image: "/images/mentor-angely.jpg",
-    alt: "Angely Dub in a wide straw hat, looking up and smiling",
+    alt: "Angely Dub seated on a stool in a brown suit",
+    imageClassName: "object-[center_18%]",
     bar: "bg-rust text-cream",
     back: "bg-rust text-cream",
     speed: 0.28,
@@ -35,7 +36,8 @@ export const mentors = [
     name: "Bea Trinidad",
     backName: "Bea",
     image: "/images/mentor-bea.jpg",
-    alt: "Bea Trinidad laughing in a white top at a wine bar",
+    alt: "Bea Trinidad smiling in a white t-shirt and jeans",
+    imageClassName: "object-[center_15%]",
     bar: "bg-charcoal text-cream",
     back: "bg-charcoal text-cream",
     speed: 0.46,
@@ -45,7 +47,9 @@ export const mentors = [
   {
     name: "Shai Ymbong",
     backName: "Shai Ymbong",
-    quote: "Still in the work, beside everyone else building.",
+    image: "/images/mentor-shai.jpg",
+    alt: "Shai Ymbong smiling, chin resting on her hand",
+    imageClassName: "object-[68%_22%]",
     bar: "bg-brown text-cream",
     back: "bg-quote text-brown",
     role: "Founder, ShyStudios · Storytelling & creative direction",
@@ -55,7 +59,8 @@ export const mentors = [
     name: "Nicole Santiago",
     backName: "Nicole Santiago",
     image: "/images/mentor-nicole.jpg",
-    alt: "Nicole Santiago in a white t-shirt, arms crossed, smiling",
+    alt: "Nicole Santiago looking over her shoulder in a striped top",
+    imageClassName: "object-[center_22%]",
     bar: "bg-brown text-cream",
     back: "bg-brown text-cream",
     speed: 0.22,
@@ -77,43 +82,89 @@ export const fitNotForYou = [
   "You need everything perfect before you’re willing to start",
 ];
 
-export const weeks = [
+export const curriculum = [
+  {
+    n: "Kickoff",
+    title: "Set the goal you’ll actually chase",
+    led: "Goal setting workshop · Bea",
+    body: "Before the six weeks start, we get specific. What does “doing the thing” look like by the end of February? You’ll pick your track (a personal brand, a side hustle, or a special project), name one goal you can measure, and write down what has stopped you before.",
+    assignment: "Your one-page goal sheet.",
+  },
   {
     n: "01",
-    title: "Pick your lane",
-    body: "Get honest about what you’re actually building and why you haven’t started. Leave with one clear track, not five vague ideas.",
+    title: "From idea to first version",
+    led: "Build the thing · Angely",
+    body: "How to turn an idea into a business or side hustle without waiting for the perfect plan. Angely walks through how she’s started seven businesses: finding the smallest version you can test and how it makes money. You’ll leave with one clear track.",
+    assignment: "Define your first version. What it is, who it’s for, what it costs, and the first step you’ll take this week.",
   },
   {
     n: "02",
-    title: "Pick your lane",
-    body: "Build the thing, not the plan for the thing.",
+    title: "Your story, your pitch, your opportunities",
+    led: "Tell your story · Bea",
+    body: "If you can’t explain what you do in one sentence, people can’t help you. This week you’ll write your story, your one-line pitch, and learn how to make opportunities show up through outreach instead of waiting to be discovered.",
+    assignment: "Write your short bio and one-line pitch. Build a list of 10 people who could open a door, and send your first 3 messages.",
   },
   {
     n: "03",
-    title: "Tell the story",
-    body: "Your version, in your words. The one that makes people stop scrolling because it sounds like an actual person.",
+    title: "Your personal brand and approach to content",
+    led: "Get seen · Shai",
+    body: "How to show up online in a way that sounds and looks like you. Shai covers branding, visual storytelling, and how to pick one channel and a content rhythm you can actually keep.",
+    assignment: "Pick your channel and three content pillars. Publish your first post.",
   },
   {
     n: "04",
-    title: "Put it out there",
-    body: "First post, first pitch, first real version live. Publicly. This week is the one people skip. We don’t skip it.",
+    title: "Operationalize your goals and build your team",
+    led: "Make it run · Nicole",
+    body: "A goal without a system becomes a someday. Nicole shows you how to break the big goal into weekly actions, protect your time around a full-time job or family, and figure out who you need around you, from a friend who helps to your first hire.",
+    assignment: "Your 90-day plan and your weekly operating rhythm.",
   },
   {
     n: "05",
-    title: "Get it in front of people",
-    body: "Outreach and audience-building depending on what you’re creating.",
+    title: "Special guest",
+    led: "Live session · Q&A",
+    body: "A founder or expert from Angely’s network. Live session plus Q&A.",
+    assignment: "It’s going to be about money!",
   },
   {
     n: "06",
-    title: "Build the habit",
-    body: "A plan for what you actually do every week after this ends, so this doesn’t become one more thing that fizzled.",
+    title: "Special guest + Showcase",
+    led: "Guest session · Showcase",
+    body: "A guest session, then our closing showcase. Everyone shares what they built in six weeks and what’s next.",
+    assignment: "Present your progress in 3 minutes and lock in your plan for the next 90 days.",
   },
 ];
 
-export const rhythm = [
-  { kicker: "1-2 hours", line: "per week minimum" },
-  { kicker: "Weekend", line: "Live calls" },
-  { kicker: "Every call", line: "recorded" },
+export const weekRhythm = [
+  {
+    label: "Session 1 · Live workshop (90 min)",
+    body: "The main session with that week’s mentor. Teaching, real examples, and live exercises.",
+  },
+  {
+    label: "Session 2 · Co-working (60 min)",
+    body: "Cameras on, heads down. Work on your assignment alongside the cohort.",
+  },
+  {
+    label: "Weekly ritual · Do it scared",
+    body: "Every week, everyone does one visible thing that scares them. Post it, send it, ask for it. Then share it in the group.",
+  },
+  {
+    label: "Friday · Assignment due",
+    body: "Submit your work and get feedback from the mentors and 2 peers.",
+  },
+  {
+    label: "Always on · Community chat",
+    body: "A private group for questions, wins, and accountability between calls.",
+  },
+];
+
+export const weekIndex = [
+  "Kickoff goal-setting workshop",
+  "Week 1, Angely",
+  "Week 2, Bea",
+  "Week 3, Shai",
+  "Week 4, Nicole",
+  "Week 5, Guest",
+  "Week 6, Guest + Showcase",
 ];
 
 export const outcomes = [
@@ -154,11 +205,11 @@ export const plans = [
 export const faqs = [
   {
     q: "I work full time / shift work / I’m a new mom. Do I actually have time for this?",
-    a: "The pace is 1–2 hours a week, plus a weekend live call. Every call is recorded, so a week you can’t attend live is still a week you can finish.",
+    a: "The time commitment is 3 to 4 hours a week. Every live session is recorded, so a week you can’t attend live is still a week you can finish.",
   },
   {
     q: "What if I’m not even sure what I want to build yet?",
-    a: "Week one is for getting honest about what you’re actually building, and leaving with one clear track instead of five vague ideas.",
+    a: "The kickoff workshop is for that. Before the six weeks start, you’ll pick your track, name one goal you can measure, and write down what has stopped you before.",
   },
   {
     q: "Isn’t this just something I could figure out with ChatGPT?",
