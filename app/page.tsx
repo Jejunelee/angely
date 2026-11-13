@@ -1,6 +1,7 @@
 import { ButtonLink } from "@/components/button-link";
 import { FaqList } from "@/components/faq-list";
 import { MentorCard } from "@/components/mentor-card";
+import { HeroSlideshow } from "@/components/hero-slideshow";
 import { Photo } from "@/components/photo";
 import { SiteHeader } from "@/components/site-header";
 import {
@@ -77,15 +78,7 @@ function Hero() {
           </div>
         </div>
         <div className="hero-frame">
-          <Photo
-            src="/images/hero.jpg"
-            alt="Angely Dub in a brown suit, looking to the side"
-            imageClassName="object-[center_20%]"
-            priority
-            speed={0.62}
-            sizes="(max-width: 768px) 100vw, 42vw"
-            className="aspect-[5/4] w-full md:aspect-[4/5]"
-          />
+          <HeroSlideshow />
         </div>
       </div>
     </section>
@@ -200,16 +193,16 @@ function Founder() {
           <div className="grid gap-3 sm:gap-4">
             <Photo
               src="/images/founder-flowers.jpg"
-              alt="Angely Dub in profile, wearing a brown suit and silver tie"
-              imageClassName="object-[30%_18%]"
+              alt="Angely Dub hosting a panel"
+              imageClassName="object-[center_top]"
               speed={0.22}
               sizes="(max-width: 1024px) 36vw, 22vw"
               className="aspect-[4/3]"
             />
             <Photo
               src="/images/founder-portrait.jpg"
-              alt="Angely Dub seated on a stool in a brown suit"
-              imageClassName="object-[center_15%]"
+              alt="Angely Dub listening thoughtfully"
+              imageClassName="object-[center_top]"
               speed={0.4}
               sizes="(max-width: 1024px) 36vw, 22vw"
               className="aspect-[2/3]"
@@ -217,8 +210,8 @@ function Founder() {
           </div>
           <Photo
             src="/images/founder-city.jpg"
-            alt="Angely Dub in a brown suit, one hand in her pocket"
-            imageClassName="object-[center_20%]"
+            alt="Angely Dub at her Ohana Pets booth"
+            imageClassName="object-[center_top]"
             speed={0.16}
             sizes="(max-width: 1024px) 56vw, 34vw"
             className="h-full min-h-[300px]"

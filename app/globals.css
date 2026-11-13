@@ -372,6 +372,10 @@ body {
   animation: frame-in 1.35s cubic-bezier(0.77, 0, 0.18, 1) 0.15s both;
 }
 
+.hero-slide {
+  transition: opacity 1.2s ease-in-out;
+}
+
 .beat {
   opacity: 0;
   transform: translate3d(0, 56px, 0);
@@ -439,6 +443,10 @@ article.beat {
   .hero-frame,
   .preloader {
     animation: none;
+  }
+
+  .hero-slide {
+    transition: none;
   }
 
   .preloader {
